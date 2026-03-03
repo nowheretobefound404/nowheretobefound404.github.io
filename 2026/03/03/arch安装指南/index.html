@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nowheretobefound.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="这是一篇archlinux的折腾心得">
+<meta property="og:type" content="article">
+<meta property="og:title" content="arch安装指南">
+<meta property="og:url" content="https://nowheretobefound.github.io/2026/03/03/arch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="SimpleBlog">
+<meta property="og:description" content="这是一篇archlinux的折腾心得">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-03T01:35:37.000Z">
+<meta property="article:modified_time" content="2026-03-03T07:13:54.833Z">
+<meta property="article:author" content="nowhere">
+<meta property="article:tag" content="ArchLinux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://nowheretobefound.github.io/2026/03/03/arch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://nowheretobefound.github.io/2026/03/03/arch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/","path":"2026/03/03/arch安装指南/","title":"arch安装指南"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>arch安装指南 | SimpleBlog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">SimpleBlog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#arch%E5%9F%BA%E7%A1%80%E5%AE%89%E8%A3%85"><span class="nav-text">arch基础安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E8%BF%9B%E5%85%A5%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="nav-text">0.进入安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%A6%81%E7%94%A8reflector%E6%9C%8D%E5%8A%A1"><span class="nav-text">1.禁用reflector服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%A1%AE%E8%AE%A4%E6%98%AF%E5%90%A6%E4%B8%BAUEFI%E6%A8%A1%E5%BC%8F"><span class="nav-text">2.确认是否为UEFI模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C"><span class="nav-text">3.连接网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%A5%E4%BD%BF%E7%94%A8%E6%97%A0%E7%BA%BF%E8%BF%9E%E6%8E%A5"><span class="nav-text">若使用无线连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8B%A5%E4%BD%BF%E7%94%A8%E6%9C%89%E7%BA%BF%E8%BF%9E%E6%8E%A5"><span class="nav-text">若使用有线连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%B5%8B%E8%AF%95%E7%BD%91%E7%BB%9C%E8%BF%9E%E9%80%9A%E6%80%A7"><span class="nav-text">4.测试网络连通性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F"><span class="nav-text">5.更新系统时钟</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E8%BD%AF%E4%BB%B6%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F%E5%8A%A0%E5%BF%AB%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6"><span class="nav-text">6,更换国内软件仓库镜像加快下载速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%88%86%E5%8C%BA%E5%92%8C%E6%A0%BC%E5%BC%8F%E5%8C%96-%E4%BD%BF%E7%94%A8Btrfs%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-luk2%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86"><span class="nav-text">7.分区和格式化(使用Btrfs文件系统+luk2全盘加密)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E5%88%86%E5%8C%BA"><span class="nav-text">7-1.分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-%E5%88%9B%E5%BB%BA%E5%8A%A0%E5%AF%86%E5%AE%B9%E5%99%A8%EF%BC%8C%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B9%B6%E5%88%9B%E5%BB%BA%E5%AD%90%E5%8D%B7"><span class="nav-text">7-2.创建加密容器，格式化并创建子卷</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-0-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%8A%A0%E5%AF%86%E5%AE%B9%E5%99%A8"><span class="nav-text">7-2.0.创建一个加密容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-1-%E5%88%9B%E5%BB%BABtrfs%E5%AD%90%E5%8D%B7"><span class="nav-text">7-2.1.创建Btrfs子卷</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%8C%82%E8%BD%BD"><span class="nav-text">8.挂载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="nav-text">9.安装系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E7%94%9F%E6%88%90fstab%E6%96%87%E4%BB%B6"><span class="nav-text">10.生成fstab文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-change-root"><span class="nav-text">11.change root</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D%E4%B8%8E%E6%97%B6%E5%8C%BA"><span class="nav-text">12.设置主机名与时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E7%A1%AC%E4%BB%B6%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE"><span class="nav-text">13.硬件时间设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AELocale"><span class="nav-text">设置Locale</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E4%B8%BAroot%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="nav-text">15.为root用户设置密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-%E5%AE%89%E8%A3%85%E5%BE%AE%E7%A0%81"><span class="nav-text">16.安装微码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-%E4%BF%AE%E6%94%B9%E5%86%85%E6%A0%B8%E9%92%A9%E5%AD%90%E5%B9%B6%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="nav-text">17.修改内核钩子并安装引导程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#17-1-%E4%BF%AE%E6%94%B9%E5%86%85%E6%A0%B8%E9%92%A9%E5%AD%90"><span class="nav-text">17-1.修改内核钩子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-2-%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F"><span class="nav-text">17-2.安装引导程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-%E5%AE%8C%E6%88%90%E5%AE%89%E8%A3%85"><span class="nav-text">18.完成安装</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">nowhere</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://nowheretobefound.github.io/2026/03/03/arch%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="nowhere">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SimpleBlog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="arch安装指南 | SimpleBlog">
+      <meta itemprop="description" content="这是一篇archlinux的折腾心得">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          arch安装指南
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2026-03-03 09:35:37 / Modified: 15:13:54" itemprop="dateCreated datePublished" datetime="2026-03-03T09:35:37+08:00">2026-03-03</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">这是一篇archlinux的折腾心得</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="arch基础安装"><a href="#arch基础安装" class="headerlink" title="arch基础安装"></a>arch基础安装</h1><p>本文大量借鉴了archlinux简明指南，感谢此文对本人的指导<br>本人在此基础上加入了自己常用的代码并删除了自己不需要的内容，主要为自己以后装重装服务，并不适合初学者查阅，建议去看原文<br>原文：<a target="_blank" rel="noopener" href="https://arch.icekylin.online/">https://arch.icekylin.online/</a><br>原文贡献者：<a target="_blank" rel="noopener" href="https://github.com/nakanomikuorg/arch-guide/graphs/contributors">https://github.com/nakanomikuorg/arch-guide/graphs/contributors</a></p>
+<h2 id="0-进入安装环境"><a href="#0-进入安装环境" class="headerlink" title="0.进入安装环境"></a>0.进入安装环境</h2><p>在提前准备好的arch安装介质中进入安装环境</p>
+<h2 id="1-禁用reflector服务"><a href="#1-禁用reflector服务" class="headerlink" title="1.禁用reflector服务"></a>1.禁用reflector服务</h2><p>该指令将禁用服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop reflector.service</span><br></pre></td></tr></table></figure>
+<p>查看服务是否被禁用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status reflector.service</span><br></pre></td></tr></table></figure>
+<h2 id="2-确认是否为UEFI模式"><a href="#2-确认是否为UEFI模式" class="headerlink" title="2.确认是否为UEFI模式"></a>2.确认是否为UEFI模式</h2><p>禁用了reflector服务后，确认一下是否为UEFI模式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> /sys/firmware/efi/efivars</span><br></pre></td></tr></table></figure>
+<p>如果输出了efi变量则说明已在UEFI模式</p>
+<h2 id="3-连接网络"><a href="#3-连接网络" class="headerlink" title="3.连接网络"></a>3.连接网络</h2><h3 id="若使用无线连接"><a href="#若使用无线连接" class="headerlink" title="若使用无线连接"></a>若使用无线连接</h3><p>使用iwctl进行连接:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">iwctl <span class="comment"># 进入交互式命令行</span></span><br><span class="line">device list <span class="comment"># 列出无线网卡设备名，比如无线网卡看到叫 wlan0</span></span><br><span class="line">station wlan0 scan <span class="comment"># 扫描网络</span></span><br><span class="line">station wlan0 get-networks <span class="comment"># 列出所有 wifi 网络</span></span><br><span class="line">station wlan0 connect wifi-name <span class="comment"># 进行连接，注意这里无法输入中文。回车后输入密码即可</span></span><br><span class="line"><span class="built_in">exit</span> <span class="comment"># 连接成功后退出</span></span><br></pre></td></tr></table></figure>
+<h3 id="若使用有线连接"><a href="#若使用有线连接" class="headerlink" title="若使用有线连接"></a>若使用有线连接</h3><p>正常来说，只要插上一个已经联网的路由器分出的网线（DHCP），直接就能联网。<br>可以等待几秒等网络建立连接后再进行下一步测试网络的操作。<br>若笔记本没有网线接口请使用带网线接口的扩展坞。</p>
+<h2 id="4-测试网络连通性"><a href="#4-测试网络连通性" class="headerlink" title="4.测试网络连通性"></a>4.测试网络连通性</h2><p>通过ping命令测试网络连通性:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.bilibili.com</span><br></pre></td></tr></table></figure>
+<h2 id="5-更新系统时钟"><a href="#5-更新系统时钟" class="headerlink" title="5.更新系统时钟"></a>5.更新系统时钟</h2><p>使用timedatectl确保系统时间是准确的。这一步不是可选的，正确的系统时间对于部分程序来说非常重要:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-ntp <span class="literal">true</span> <span class="comment"># 将系统时间与网络时间进行同步</span></span><br><span class="line">timedatectl status <span class="comment"># 检查服务状态</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-更换国内软件仓库镜像加快下载速度"><a href="#6-更换国内软件仓库镜像加快下载速度" class="headerlink" title="6,更换国内软件仓库镜像加快下载速度"></a>6,更换国内软件仓库镜像加快下载速度</h2><p>使用vim编辑器修改 &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlist 文件。将pacman软件仓库源更换为国内软件仓库镜像源:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/pacman.d/mirrorlist</span><br></pre></td></tr></table></figure>
+<p>放在最上面的是会使用的软件仓库镜像源，推荐的镜像源如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="variable">$repo</span>/os/<span class="variable">$arch</span> <span class="comment"># 清华大学开源软件镜像站</span></span><br></pre></td></tr></table></figure>
+<h2 id="7-分区和格式化-使用Btrfs文件系统-luk2全盘加密"><a href="#7-分区和格式化-使用Btrfs文件系统-luk2全盘加密" class="headerlink" title="7.分区和格式化(使用Btrfs文件系统+luk2全盘加密)"></a>7.分区和格式化(使用Btrfs文件系统+luk2全盘加密)</h2><h3 id="7-1-分区"><a href="#7-1-分区" class="headerlink" title="7-1.分区"></a>7-1.分区</h3><p>常用的分区配置:</p>
+<ul>
+<li>&#x2F; 根目录：&gt;&#x3D; 128GB（和用户主目录在同一个 Btrfs 文件系统上）</li>
+<li>&#x2F;home 用户主目录：&gt;&#x3D; 128GB（和根目录在同一个 Btrfs 文件系统上）</li>
+<li>&#x2F;boot EFI 分区：256MB（由电脑厂商或 Windows 决定，无需再次创建）</li>
+<li>Swap 分区：&gt;&#x3D; 电脑实际运行内存的 60%（设置这个大小是为了配置休眠准备）</li>
+</ul>
+<p>通过lsblk命令，区分要安装archlinux的磁盘，并显示当前磁盘的分区情况:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk <span class="comment"># 显示当前分区情况</span></span><br></pre></td></tr></table></figure>
+<p>接下来使用cfdisk命令对磁盘分区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cfdisk /dev/nvmexn1 <span class="comment"># 对安装 archlinux 的磁盘分区</span></span><br></pre></td></tr></table></figure>
+<p>首先需要一个2G的efi分区，然后再划一个主分区，类型为linux filesystem<br>分区完成后，使用fdisk或lsblk命令复查分区情况:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsblk</span><br></pre></td></tr></table></figure>
+<h3 id="7-2-创建加密容器，格式化并创建子卷"><a href="#7-2-创建加密容器，格式化并创建子卷" class="headerlink" title="7-2.创建加密容器，格式化并创建子卷"></a>7-2.创建加密容器，格式化并创建子卷</h3><h4 id="7-2-0-创建一个加密容器"><a href="#7-2-0-创建一个加密容器" class="headerlink" title="7-2.0.创建一个加密容器"></a>7-2.0.创建一个加密容器</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cryptsetup lucksFormat --<span class="built_in">type</span> lucks2 /dev/nvmexn1px <span class="comment"># 创建加密容器</span></span><br><span class="line">cryptsetup open /dev/nvmexn1px cryptroot <span class="comment"># 打开并映射</span></span><br></pre></td></tr></table></figure>
+<p>然后对efi分区和加密容器进行格式化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkfs.fat -F32 /dev/nvmexn1px <span class="comment"># 格式化efi分区</span></span><br><span class="line">mkfs.btrfs /dev/mapper/cryptroot <span class="comment"># 格式化主分区并使用Btrfs</span></span><br></pre></td></tr></table></figure>
+<h4 id="7-2-1-创建Btrfs子卷"><a href="#7-2-1-创建Btrfs子卷" class="headerlink" title="7-2.1.创建Btrfs子卷"></a>7-2.1.创建Btrfs子卷</h4><p>通过以下命令挂载盘并创建子卷</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/mapper/cryptroot /mnt</span><br><span class="line">btrfs subvolume create /mnt/@</span><br><span class="line">btrfs subvolume create /mnt/@home</span><br><span class="line">umount /mnt</span><br></pre></td></tr></table></figure>
+<p>结束后卸载卷即可</p>
+<h2 id="8-挂载"><a href="#8-挂载" class="headerlink" title="8.挂载"></a>8.挂载</h2><p>在挂载时，挂载是有顺序的，需要从根目录开始挂载，使用如下命令挂载子卷并创建swap:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mount -o subvol=@,compress=zstd /dev/mapper/cryptroot /mnt <span class="comment"># 挂载根目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p /mnt/&#123;boot,home&#125;</span><br><span class="line">mount -o subvol=@home.compress=zstd /dev/mapper/cryptroot /mnt/home <span class="comment"># 挂载home分区</span></span><br><span class="line">btrfs filesystem mkswapfile --size 80G /mnt/swapfile <span class="comment"># 在根目录创建80G的swap文件</span></span><br><span class="line">swapon /mnt/swapfile <span class="comment"># 激活swap</span></span><br><span class="line">mount /dev/nvmexn1px /mnt/boot <span class="comment"># 挂载efi分区</span></span><br></pre></td></tr></table></figure>
+<p>使用df命令复查挂载情况:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">df</span> -h</span><br></pre></td></tr></table></figure>
+<p>使用free命令复查swap分区挂载情况:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h <span class="comment"># -h 选项会使输出以人类可读的单位显示</span></span><br></pre></td></tr></table></figure>
+<h2 id="9-安装系统"><a href="#9-安装系统" class="headerlink" title="9.安装系统"></a>9.安装系统</h2><p>通过如下命令使用pacstrap脚本安装基础包:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt base base-devel linux linux-headers linux-firmware btrfs-progs</span><br></pre></td></tr></table></figure>
+<p>如果提示GPG证书错误，可能是因为使用的不是最新的镜像文件，可以通过更新archlinux-keyring解决此问题</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S archlinux-keyring</span><br></pre></td></tr></table></figure>
+<p>通过如下命令使用pacstrap脚本安装其它必要的功能性软件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt networkmanager vim nvim <span class="built_in">sudo</span> fish</span><br></pre></td></tr></table></figure>
+<h2 id="10-生成fstab文件"><a href="#10-生成fstab文件" class="headerlink" title="10.生成fstab文件"></a>10.生成fstab文件</h2><p>fstab用来定义磁盘分区，是linux系统中重要的文件之一。使用genfstab自动根据当前挂载情况生成并写入fstab文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">genfstab -U /mnt &gt; /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<p>可以用cat复查一下&#x2F;mnt&#x2F;etc&#x2F;fstab确保没有错误</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /mnt/etc/fstab</span><br></pre></td></tr></table></figure>
+<h2 id="11-change-root"><a href="#11-change-root" class="headerlink" title="11.change root"></a>11.change root</h2><p>使用以下命令把系统环境切换到新系统下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arch-chroot /mnt</span><br></pre></td></tr></table></figure>
+<p>此时，原来安装盘下的 &#x2F;mnt 目录就变成了新系统的 &#x2F; 目录。同时，可以发现命令行的提示符颜色和样式也发生了改变。</p>
+<h2 id="12-设置主机名与时区"><a href="#12-设置主机名与时区" class="headerlink" title="12.设置主机名与时区"></a>12.设置主机名与时区</h2><p>首先在 &#x2F;etc&#x2F;hostname 设置主机名:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hostname</span><br></pre></td></tr></table></figure>
+<p>加入你想为主机取的主机名<br>接下来在 &#x2F;etc&#x2F;hosts 设置与其匹配的条目:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
+<p>加入如下内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1   localhost</span><br><span class="line">::1         localhost</span><br><span class="line">127.0.1.1   xxx.localdomain xxx</span><br></pre></td></tr></table></figure>
+<p>随后设置时区，在 &#x2F;etc&#x2F;localtime 下用 &#x2F;usr 中合适的时区创建符号链接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Singapore /etc/localtime</span><br></pre></td></tr></table></figure>
+<h2 id="13-硬件时间设置"><a href="#13-硬件时间设置" class="headerlink" title="13.硬件时间设置"></a>13.硬件时间设置</h2><p>使用如下命令将系统时间同步到硬件时间</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hwclock --systohc</span><br></pre></td></tr></table></figure>
+<h2 id="设置Locale"><a href="#设置Locale" class="headerlink" title="设置Locale"></a>设置Locale</h2><p>Locale 决定了软件使用的语言，书写习惯和字符集。<br>编辑 &#x2F;etc&#x2F;locale.gen，去掉 en_US.UTF-8 UTF-8 以及 zh_CN.UTF-8 UTF-8 行前的注释符号（#）:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/locale.gen</span><br></pre></td></tr></table></figure>
+<p>然后使用如下命令生成locale:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locale-gen</span><br></pre></td></tr></table></figure>
+<p>向 &#x2F;etc&#x2F;locale.conf 输入内容:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;LANG=en_US.UTF-8&#x27;</span>  &gt; /etc/locale.conf</span><br></pre></td></tr></table></figure>
+<h2 id="15-为root用户设置密码"><a href="#15-为root用户设置密码" class="headerlink" title="15.为root用户设置密码"></a>15.为root用户设置密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd root</span><br></pre></td></tr></table></figure>
+<h2 id="16-安装微码"><a href="#16-安装微码" class="headerlink" title="16.安装微码"></a>16.安装微码</h2><p>通过以下命令安装对应芯片制造商的微码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pacman -S intel-ucode <span class="comment"># Intel</span></span><br><span class="line">pacman -S amd-ucode <span class="comment"># AMD</span></span><br></pre></td></tr></table></figure>
+<h2 id="17-修改内核钩子并安装引导程序"><a href="#17-修改内核钩子并安装引导程序" class="headerlink" title="17.修改内核钩子并安装引导程序"></a>17.修改内核钩子并安装引导程序</h2><h3 id="17-1-修改内核钩子"><a href="#17-1-修改内核钩子" class="headerlink" title="17-1.修改内核钩子"></a>17-1.修改内核钩子</h3><p>编辑 &#x2F;etc&#x2F;mkinitcpio.conf 并定位到 HOOKS 行，在block后filesystems前加入sd-encrypt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOOKS=(base systemd autodetect microcode modconf kms keyboard keymap sd-vconsole block sd-encrypt filesystems fsck)</span><br></pre></td></tr></table></figure>
+<p>然后重新生成镜像:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkinitcpio -P</span><br></pre></td></tr></table></figure>
+<h3 id="17-2-安装引导程序"><a href="#17-2-安装引导程序" class="headerlink" title="17-2.安装引导程序"></a>17-2.安装引导程序</h3><p>安装对应的包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S grub efibootmgr os-prober</span><br></pre></td></tr></table></figure>
+<p>安装 grub 到 efi分区:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH</span><br></pre></td></tr></table></figure>
+<p>接下来使用 vim 编辑 &#x2F;etc&#x2F;default&#x2F;grub 文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/default/grub</span><br></pre></td></tr></table></figure>
+<p>进行如下修改:</p>
+<ul>
+<li>去掉 GRUB_CMDLINE_LINUX_DEFAULT 一行中最后的 quiet 参数</li>
+<li>把 loglevel 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错</li>
+<li>加入 nowatchdog 参数，这可以显著提高开关机速度</li>
+<li>去掉 GRUB_ENABLE_CRYPTDISK&#x3D;y 前的注释，让grub启用对加密硬盘的支持</li>
+<li>lsblk -f 查看加密前盘的UUID，在 GRUB_CMDLINE_LINUX_DEFAULT 中加入 rd.luks.name&#x3D;你的未加密前盘的UUID&#x3D;cryptroot root&#x3D;&#x2F;dev&#x2F;mapper&#x2F;cryptroot rootflags&#x3D;subvol&#x3D;@</li>
+<li>把 GRUB_SAVEDEFAULT 改成 true</li>
+<li>把 GRUB_DISABLE_SUBMENU 改成 y</li>
+<li>为了引导 win10，则还需要添加新的一行 GRUB_DISABLE_OS_PROBER&#x3D;false</li>
+</ul>
+<p>最后生成 grub 所需的配置文件:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+<p>若 win10 安装在另一个硬盘中则不会输出 可挂载windows的efi的硬盘并重新执行该命令</p>
+<h2 id="18-完成安装"><a href="#18-完成安装" class="headerlink" title="18.完成安装"></a>18.完成安装</h2><p>输入以下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span> <span class="comment"># 退回安装环境</span></span><br><span class="line">reboot <span class="comment"># 重启并拔掉u盘</span></span><br></pre></td></tr></table></figure>
+<p>重启后解锁硬盘并使用root用户登录<br>设置开机自启并立即启动 networkmanager 服务，即可连接网络</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> --now NetworkManager <span class="comment"># 设置开机自启并立即启动 NetworkManager 服务</span></span><br></pre></td></tr></table></figure>
+<p>若为无线连接，则需要在启动 networkmanager 后使用 nmcli 连接网络</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmcli dev wifi list <span class="comment"># 显示附近的 Wi-Fi 网络</span></span><br><span class="line">nmcli dev wifi connect <span class="string">&quot;Wi-Fi名（SSID）&quot;</span> password <span class="string">&quot;网络密码&quot;</span> <span class="comment"># 连接指定的无线网络</span></span><br></pre></td></tr></table></figure>
+<p>也可以使用 nmtui 来配置网络</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmtui</span><br></pre></td></tr></table></figure>
+<p>fastfetch 可以将系统信息和发行版 logo 一并打印出来。通过 pacman 安装 fastfetch:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S fastfetch</span><br></pre></td></tr></table></figure>
+<p>使用 fastfetch 打印系统信息:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastfetch</span><br></pre></td></tr></table></figure>
+<p>到目前为止，一个基础的archlinux已经安装完成了，下一章将会进行更多系统设置以及图形界面的安装</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/ArchLinux/" rel="tag"># ArchLinux</a>
+          </div>
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">nowhere</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
