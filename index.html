@@ -129,7 +129,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -151,6 +151,90 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://nowheretobefound404.github.io/2026/03/04/arch%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="nowhere">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SimpleBlog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | SimpleBlog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2026/03/04/arch%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8/" class="post-title-link" itemprop="url">arch显卡驱动</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2026-03-04 09:20:27 / Modified: 09:28:33" itemprop="dateCreated datePublished" datetime="2026-03-04T09:20:27+08:00">2026-03-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>所有 AMD 显卡建议使用开源驱动，英伟达显卡建议使用闭源驱动</p>
+<h2 id="集成显卡"><a href="#集成显卡" class="headerlink" title="集成显卡"></a>集成显卡</h2><h3 id="Intel-核芯显卡"><a href="#Intel-核芯显卡" class="headerlink" title="Intel 核芯显卡"></a>Intel 核芯显卡</h3><p>通过以下命令安装如下几个包即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel</span><br></pre></td></tr></table></figure>
+<h3 id="AMD-集成显卡"><a href="#AMD-集成显卡" class="headerlink" title="AMD 集成显卡"></a>AMD 集成显卡</h3><p>由于本人没有使用过amd,暂不更新</p>
+<h2 id="独立显卡"><a href="#独立显卡" class="headerlink" title="独立显卡"></a>独立显卡</h2><h3 id="NVIDIA-独立显卡"><a href="#NVIDIA-独立显卡" class="headerlink" title="NVIDIA 独立显卡"></a>NVIDIA 独立显卡</h3><p>我个人所使用的包如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S nvidia-dkms nvidia-settings lib32-nvidia-utils <span class="comment"># 必须安装</span></span><br></pre></td></tr></table></figure>
+<p>对于 Turing (NV160&#x2F;TUXXX) 系列或更新的显卡，需要安装 nvidia-open 驱动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S nvidia-open nvidia-settings lib32-nvidia-utils <span class="comment"># 必须安装</span></span><br></pre></td></tr></table></figure>
+<p>其他较新型号的独立显卡使用以下命令直接安装如下几个包即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S nvidia nvidia-settings lib32-nvidia-utils <span class="comment"># 必须安装</span></span><br></pre></td></tr></table></figure>
+<p>如果是 GeForce 630 以下到 GeForce 400 系列的老卡，使用以下命令安装 nvidia-390xx-dkmsaur 及其 32 位支持包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils</span><br></pre></td></tr></table></figure>
+<p>再老的显卡直接使用以下命令安装 开源驱动 即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S mesa lib32-mesa xf86-video-nouveau</span><br></pre></td></tr></table></figure>
+<h3 id="AMD-独立显卡"><a href="#AMD-独立显卡" class="headerlink" title="AMD 独立显卡"></a>AMD 独立显卡</h3><p>由于本人没有使用过amd,暂不更新</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -196,7 +280,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2026-03-04 09:09:41" itemprop="dateModified" datetime="2026-03-04T09:09:41+08:00">2026-03-04</time>
+      <time title="Modified: 2026-03-04 09:31:55" itemprop="dateModified" datetime="2026-03-04T09:31:55+08:00">2026-03-04</time>
     </span>
 
   
@@ -266,6 +350,10 @@
 <p>重新配置grub和内核</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line"><span class="built_in">sudo</span> mkinitcpio -P</span><br></pre></td></tr></table></figure>
 <p>最后重启电脑，电脑重启后可以执行 sudo systemctl hibernate 来让电脑进入休眠模式</p>
+<h2 id="14-配置不同内核"><a href="#14-配置不同内核" class="headerlink" title="14.配置不同内核"></a>14.配置不同内核</h2><p>以 zen 内核为例，需要如下几个包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S linux-zen linux-zen-headers</span><br><span class="line"><span class="built_in">sudo</span> grub-mkconfig -o /boot/grub/grub.cfg <span class="comment">## 重新配置grub让zen内核变得可识别</span></span><br></pre></td></tr></table></figure>
+
+
 
       
     </div>
