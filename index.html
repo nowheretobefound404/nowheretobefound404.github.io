@@ -188,9 +188,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2026-03-03 16:50:57 / Modified: 20:18:16" itemprop="dateCreated datePublished" datetime="2026-03-03T16:50:57+08:00">2026-03-03</time>
+      <time title="Created: 2026-03-03 16:50:57" itemprop="dateCreated datePublished" datetime="2026-03-03T16:50:57+08:00">2026-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-03-04 09:09:41" itemprop="dateModified" datetime="2026-03-04T09:09:41+08:00">2026-03-04</time>
     </span>
 
   
@@ -251,6 +257,15 @@
 <h2 id="12-设置Btrfs快照"><a href="#12-设置Btrfs快照" class="headerlink" title="12.设置Btrfs快照"></a>12.设置Btrfs快照</h2><p>通过以下命令安装 Timeshift:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S timeshift</span><br></pre></td></tr></table></figure>
 <p>安装后，可以选择自动备份计划，也可以手动备份</p>
+<h2 id="13-配置休眠"><a href="#13-配置休眠" class="headerlink" title="13.配置休眠"></a>13.配置休眠</h2><p>首先要配置内核钩子<br>用 vim 打开 &#x2F;etc&#x2F;mkinitcpio.conf,在 filesystems 后面加上 resume</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOOKS=(base systemd autodetect microcode modconf kms keyboard keymap sd-vconsole block sd-encrypt filesystems resume fsck)</span><br></pre></td></tr></table></figure>
+<p>获取 swapfile 在硬盘上的偏移值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btrfs inspect-internal map-swapfile -r /swap/swapfil</span><br><span class="line">e</span><br></pre></td></tr></table></figure>
+<p>配置 grub 的 GRUB_CMDLINE_LINUX_DEFAULT，需要加入 resume 和 resume_offset</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resume=/dev/mapper/cryptroot</span><br><span class="line">resume_offset=xxxxx <span class="comment"># 你刚刚得到的偏移值</span></span><br><span class="line">nvme_core.default_ps_max_latency_us=0 <span class="comment"># 关闭硬盘电源优化以防止timeout</span></span><br></pre></td></tr></table></figure>
+<p>重新配置grub和内核</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line"><span class="built_in">sudo</span> mkinitcpio -P</span><br></pre></td></tr></table></figure>
+<p>最后重启电脑，电脑重启后可以执行 sudo systemctl hibernate 来让电脑进入休眠模式</p>
 
       
     </div>
@@ -305,9 +320,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2026-03-03 09:35:37 / Modified: 20:16:17" itemprop="dateCreated datePublished" datetime="2026-03-03T09:35:37+08:00">2026-03-03</time>
+      <time title="Created: 2026-03-03 09:35:37" itemprop="dateCreated datePublished" datetime="2026-03-03T09:35:37+08:00">2026-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-03-04 08:58:41" itemprop="dateModified" datetime="2026-03-04T08:58:41+08:00">2026-03-04</time>
     </span>
 
   

@@ -28,7 +28,7 @@
 <meta property="og:description" content="0.确保系统为最新如果你在做完章节 archlinux 基础安装 的内容后，关机并放置过一段时间，那么需要先按照 18. 完成安装 中连接网络的方法重新连网，然后使用以下命令更新系统： 1pacman -Syu # 升级系统中的全部包 1.配置root账户的默认编辑器默认情况下，archlinux 在一些终端编辑场景调用 vi 编辑器，但是我们使用 vim 编辑器。如果不做额外配置且不显式的指定编">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-03-03T08:50:57.000Z">
-<meta property="article:modified_time" content="2026-03-03T12:18:16.260Z">
+<meta property="article:modified_time" content="2026-03-04T01:09:41.604Z">
 <meta property="article:author" content="nowhere">
 <meta property="article:tag" content="Archlinux">
 <meta name="twitter:card" content="summary">
@@ -122,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E7%A1%AE%E4%BF%9D%E7%B3%BB%E7%BB%9F%E4%B8%BA%E6%9C%80%E6%96%B0"><span class="nav-text">0.确保系统为最新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%9A%84%E9%BB%98%E8%AE%A4%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">1.配置root账户的默认编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%87%86%E5%A4%87%E9%9D%9Eroot%E7%94%A8%E6%88%B7"><span class="nav-text">2.准备非root用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%BC%80%E5%90%AF32%E4%BD%8D%E6%94%AF%E6%8C%81%E5%BA%93"><span class="nav-text">3.开启32位支持库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85-KDE-Plasma-%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="nav-text">4.安装 KDE Plasma 桌面环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8-greeter-sddm"><span class="nav-text">5. 配置并启动 greeter sddm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">6. 安装基础功能包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E9%85%8D%E7%BD%AE%E9%9D%9E-root-%E8%B4%A6%E6%88%B7%E7%9A%84%E9%BB%98%E8%AE%A4%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">8.配置非 root 账户的默认编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%B8%BA%E4%B8%AD%E6%96%87"><span class="nav-text">9. 设置系统为中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E5%AE%89%E8%A3%85%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-text">10. 安装输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%90%AF%E5%8A%A8%E8%93%9D%E7%89%99%EF%BC%88%E8%8B%A5%E6%9C%89%EF%BC%89"><span class="nav-text">11.启动蓝牙（若有）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E8%AE%BE%E7%BD%AEBtrfs%E5%BF%AB%E7%85%A7"><span class="nav-text">12.设置Btrfs快照</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E7%A1%AE%E4%BF%9D%E7%B3%BB%E7%BB%9F%E4%B8%BA%E6%9C%80%E6%96%B0"><span class="nav-text">0.确保系统为最新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%9A%84%E9%BB%98%E8%AE%A4%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">1.配置root账户的默认编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%87%86%E5%A4%87%E9%9D%9Eroot%E7%94%A8%E6%88%B7"><span class="nav-text">2.准备非root用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%BC%80%E5%90%AF32%E4%BD%8D%E6%94%AF%E6%8C%81%E5%BA%93"><span class="nav-text">3.开启32位支持库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%AE%89%E8%A3%85-KDE-Plasma-%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="nav-text">4.安装 KDE Plasma 桌面环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8-greeter-sddm"><span class="nav-text">5. 配置并启动 greeter sddm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">6. 安装基础功能包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E9%85%8D%E7%BD%AE%E9%9D%9E-root-%E8%B4%A6%E6%88%B7%E7%9A%84%E9%BB%98%E8%AE%A4%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-text">8.配置非 root 账户的默认编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E4%B8%BA%E4%B8%AD%E6%96%87"><span class="nav-text">9. 设置系统为中文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E5%AE%89%E8%A3%85%E8%BE%93%E5%85%A5%E6%B3%95"><span class="nav-text">10. 安装输入法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%90%AF%E5%8A%A8%E8%93%9D%E7%89%99%EF%BC%88%E8%8B%A5%E6%9C%89%EF%BC%89"><span class="nav-text">11.启动蓝牙（若有）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E8%AE%BE%E7%BD%AEBtrfs%E5%BF%AB%E7%85%A7"><span class="nav-text">12.设置Btrfs快照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E9%85%8D%E7%BD%AE%E4%BC%91%E7%9C%A0"><span class="nav-text">13.配置休眠</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,9 +195,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2026-03-03 16:50:57 / Modified: 20:18:16" itemprop="dateCreated datePublished" datetime="2026-03-03T16:50:57+08:00">2026-03-03</time>
+      <time title="Created: 2026-03-03 16:50:57" itemprop="dateCreated datePublished" datetime="2026-03-03T16:50:57+08:00">2026-03-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2026-03-04 09:09:41" itemprop="dateModified" datetime="2026-03-04T09:09:41+08:00">2026-03-04</time>
     </span>
 
   
@@ -257,6 +263,15 @@
 <h2 id="12-设置Btrfs快照"><a href="#12-设置Btrfs快照" class="headerlink" title="12.设置Btrfs快照"></a>12.设置Btrfs快照</h2><p>通过以下命令安装 Timeshift:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S timeshift</span><br></pre></td></tr></table></figure>
 <p>安装后，可以选择自动备份计划，也可以手动备份</p>
+<h2 id="13-配置休眠"><a href="#13-配置休眠" class="headerlink" title="13.配置休眠"></a>13.配置休眠</h2><p>首先要配置内核钩子<br>用 vim 打开 &#x2F;etc&#x2F;mkinitcpio.conf,在 filesystems 后面加上 resume</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOOKS=(base systemd autodetect microcode modconf kms keyboard keymap sd-vconsole block sd-encrypt filesystems resume fsck)</span><br></pre></td></tr></table></figure>
+<p>获取 swapfile 在硬盘上的偏移值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btrfs inspect-internal map-swapfile -r /swap/swapfil</span><br><span class="line">e</span><br></pre></td></tr></table></figure>
+<p>配置 grub 的 GRUB_CMDLINE_LINUX_DEFAULT，需要加入 resume 和 resume_offset</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resume=/dev/mapper/cryptroot</span><br><span class="line">resume_offset=xxxxx <span class="comment"># 你刚刚得到的偏移值</span></span><br><span class="line">nvme_core.default_ps_max_latency_us=0 <span class="comment"># 关闭硬盘电源优化以防止timeout</span></span><br></pre></td></tr></table></figure>
+<p>重新配置grub和内核</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> grub-mkconfig -o /boot/grub/grub.cfg</span><br><span class="line"><span class="built_in">sudo</span> mkinitcpio -P</span><br></pre></td></tr></table></figure>
+<p>最后重启电脑，电脑重启后可以执行 sudo systemctl hibernate 来让电脑进入休眠模式</p>
 
     </div>
 
